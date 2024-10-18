@@ -1,0 +1,153 @@
+@import '../vars';
+
+.milestones{
+    position: relative;
+    background: url('../assets/images/team.jpg') no-repeat center center/cover;
+    overflow: hidden;
+
+    .milestones-title{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        color: white;
+
+        &.show{
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h2{
+            font-size: clamp(1.8rem, 5vw, 2rem);
+        }
+
+        h3{
+            font-family: 'CloverGrotesk-Regular';
+            font-size: clamp(2rem, 10vw, 9rem);
+        }
+    }
+
+    .milestones-info{
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        display: flex;
+        align-items: flex-start;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        
+        .milestones-item{
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            width: 33.3%;
+            height: 100%;
+            padding: 50px 70px;
+
+            .separator{
+                width: 100%;
+                height: 4px;
+                background-color: white;
+                border-radius: 10px;
+            }
+
+            .item-description{
+                p{
+                    font-size: clamp(1rem, 1.5vw, 1.8rem);
+                    color: white;
+                }
+            }
+            
+            &:first-of-type{
+                background-color: $light-blue;
+                .item-title{
+                    font-size: clamp(2rem, 2.5vw, 3rem);
+                    color: white;
+                }
+            }
+
+            &:nth-of-type(2){
+                align-items: center;
+                justify-content: center;
+                background-color: $dark-blue;
+                
+                .item-description{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 50px;
+                }
+
+                .item-title{
+                    font-size: clamp(1.5rem, 5vw, 2rem);
+                    color: $light-blue;
+                }
+            }
+
+            &:last-of-type{
+                align-items: center;
+                justify-content: center;
+                background-color: $purple;
+                .separator{
+                    display: none;
+                }
+                .item-title{
+                    font-size: clamp(3rem, 5vw, 4rem);
+                    color: $dark-blue;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px){
+        .milestones-info{
+            flex-direction: column;
+            gap: 0px;
+
+            .milestones-item{
+                width: 100%;
+                padding: 30px;
+                gap: 20px;
+
+                .separator{
+                    display: none;
+                }
+
+                .item-description{
+                    p{
+                        font-size: clamp(0.9rem, 1vw, 2rem);
+                    }
+                }
+
+                &.show{
+                    animation: appearFromDown 2s ease-in-out;
+                }
+
+                &:first-of-type{
+                    .item-title{
+                        font-size: clamp(1.5rem, 2vw, 3rem);
+                    }
+                }
+
+                &:nth-of-type(2){
+                    .item-title{
+                        font-size: clamp(1rem, 5vw, 1.5rem);
+                    }
+                }
+
+                &:last-of-type{
+                    .item-title{
+                        font-size: clamp(2rem, 5vw, 3rem);
+                    }
+                }
+            }
+        }
+    }
+
+}

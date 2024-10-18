@@ -1,0 +1,115 @@
+@import '../vars';
+
+.fragments{
+    position: relative;
+    display: flex;
+    
+    .fragments-container{
+        width: max-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fragments-info{
+        padding: 100px 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 75px;
+        max-width: 50%;
+
+        &.show{
+            animation: leftIn 1s ease-in-out;
+        }
+
+        h2{
+            font-size: clamp(2rem, 3.5vw, 4rem);
+            font-family: 'CloverGrotesk-Black';
+            color: $dark-blue;
+        }
+
+        p{
+            font-size: clamp(1rem, 1.5vw, 1.8rem);
+            color: black;
+            font-weight: 300;
+        }
+    }
+
+    .fragments-image{
+        background-image: url('../assets/images/juan-jose.jpg');
+        background-size: contain;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position-x: right;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .fragments-author{
+        position: absolute;
+        bottom: 50px;
+        right: 50%;
+        transform: translateX(80%);
+        display: flex;
+        align-items: stretch;
+
+        &.show{
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .name{
+            font-size: clamp(2rem, 2.5vw, 3rem);
+            background-color: $light-blue;
+            color: white;
+            padding: 30px 40px;
+        }
+    }
+
+    @media (max-width: 768px){
+        flex-direction: column;
+        gap: 0px;
+
+        .fragments-container{
+            width: 100%;
+            padding: 50px 30px;
+            fragments{
+                padding: 0;
+                width: 100%;
+            }
+        }
+
+        .fragments-info{
+            padding: 50px 30px;
+            max-width: 100%;
+            gap: 30px;
+        }
+
+        .fragments-image{
+            height: 50vh;
+            background-attachment: initial;
+            background-position-x: center;
+
+        }
+
+        .fragments-author{
+            margin: 20px 0;
+            position: static;
+            transform: none;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+
+            .name{
+                font-size: 24px;
+                padding: 20px;
+            }
+
+            .position{
+                font-size: 12px;
+                padding: 10px;
+                max-width: 200px;
+            }
+        }
+    }
+}

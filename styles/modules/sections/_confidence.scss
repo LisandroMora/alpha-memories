@@ -1,0 +1,128 @@
+@import '../vars';
+
+.confidence{
+    position: relative;
+    background: url('../assets/images/confianza-bg.jpg') no-repeat center center/cover;
+    overflow: hidden;
+
+    .confidence-title{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        color: white;
+
+        &.show{
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h2{
+            font-size: clamp(1.8rem, 5vw, 2rem);
+        }
+
+        h3{
+            font-family: 'CloverGrotesk-Regular';
+            font-size: clamp(2rem, 7vw, 7rem);
+            text-align: center;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+    }
+
+    .confidence-info{
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        display: flex;
+        align-items: flex-start;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        
+        .confidence-item{
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            width: 33.3%;
+            height: 100%;
+            padding: 50px 70px;
+            color: white;
+
+            .separator{
+                width: 100%;
+                height: 4px;
+                background-color: white;
+                border-radius: 10px;
+            }
+
+            .item-description{
+                p, li{
+                    font-size: clamp(0.9rem, 1.5vw, 1.8rem);
+                }
+                ul{
+                    padding-left: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+            }
+            
+            &:first-of-type{
+                background-color: $light-blue;
+                .item-title{
+                    font-size: clamp(1.3rem, 2.5vw, 3rem);
+                }
+            }
+
+            &:nth-of-type(2){
+                background-color: $dark-blue;
+                
+                .item-description{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 50px;
+                }
+
+                .item-title{
+                    font-size: clamp(1.3rem, 2.5vw, 3rem);
+                }
+            }
+
+            &:last-of-type{
+                background-color: $purple;
+                .item-title{
+                    font-size: clamp(1.3rem, 2.5vw, 3rem);
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px){
+        .confidence-info{
+            flex-direction: column;
+            gap: 0px;
+
+            .confidence-item{
+                width: 100%;
+                padding: 30px;
+                gap: 20px;
+
+                .separator{
+                    display: none;
+                }
+
+                &.show{
+                    animation: appearFromDown 2s ease-in-out;
+                }
+            }
+        }
+    }
+
+}

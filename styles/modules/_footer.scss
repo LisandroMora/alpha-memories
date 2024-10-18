@@ -1,0 +1,65 @@
+@import 'vars';
+
+footer{
+    min-height: 50vh;
+    background-color: $light-blue;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 80px;
+
+    p{
+        font-size: clamp(1rem, 1.5vw, 1.8rem);
+        text-align: center;
+        color: white;
+    }
+
+    a{
+        text-decoration: none;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        padding: 30px 50px;
+        text-decoration: none;
+        color: white;
+        font-size: 32px;
+        background-color: $dark-blue;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        font-family: 'CloverGrotesk-Bold';
+
+        &:hover{
+            background-color: $purple;
+            transform: scale(1.01);
+        }
+
+        &.show{
+            animation: fadeIn 1s ease-in-out;
+        }
+    }
+
+    img{
+        width: 100%;
+        max-width: 250px;
+
+        &.show{
+            animation: fadeIn 1s ease-in-out;
+        }
+    }
+
+    @media screen and (max-width: 768px){
+        height: 100%;
+        padding: 30px;
+        min-height: auto;
+        button{
+            width: 90%;
+            margin: 0 auto;
+            font-size: 24px;
+            padding: 20px;
+        }
+    }
+}

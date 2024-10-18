@@ -1,0 +1,82 @@
+.people{
+    background-color: $purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding: 100px 30px;
+
+    &-image{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 100%;
+        img{
+            width: 100%;
+            max-width: 150px;
+
+            &:nth-of-type(1){
+                &.show{
+                    animation: bigLeftIn .5s ease-in-out;
+                }
+            }
+
+            &:nth-of-type(2){
+                &.show{
+                    animation: bigLeftIn 1s ease-in-out;
+                }
+            }
+
+            &:nth-of-type(3){
+                &.show{
+                    animation: bigLeftIn 1.5s ease-in-out;
+                }
+            }
+
+            &:nth-of-type(4){
+                &.show{
+                    animation: bigLeftIn 2s ease-in-out;
+                }
+            }
+        }
+    }
+
+    &-content{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        max-width: 50%;
+        color: white;
+
+        &.show{
+            animation: rightIn 1s ease-in-out;
+        }
+
+        h2{
+            font-size: clamp(3rem, 4vw, 5rem);
+            font-family: 'CloverGrotesk-Black';
+        }
+
+        p{
+            font-size: clamp(1.8rem, 2.8vw, 3rem);
+            font-family: 'Mulish';
+        }
+    }
+
+    @media screen and (max-width: 768px){
+        flex-direction: column-reverse;
+        gap: 50px;
+
+        &-content{
+            max-width: 100%;
+        }
+
+        &-image{
+            max-width: 100%;
+
+            img{
+                max-width: 70px;
+            }
+        }
+    }
+}

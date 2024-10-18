@@ -1,0 +1,136 @@
+.info{
+    margin-top: 50px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+    .accounts{
+        min-height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 70px;
+        background-color: $dark-blue;
+        color: white;
+        gap: 100px;
+
+        .symbol{
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &.show{
+                animation: fadeIn 1s ease-in-out;
+            }
+
+            span{
+                font-size: clamp(4rem, 7vw, 8rem);
+                font-family: 'CloverGrotesk-Bold';
+
+                &:last-child{
+                    color: $light-blue;
+                }
+            }
+
+            h3{
+                color: $light-blue;
+                font-size: clamp(4rem, 7vw, 8rem);
+                font-family: 'CloverGrotesk-Bold';
+            }
+        }
+
+        .content{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            &.show{
+                animation: fadeIn 1s ease-in-out;
+            }
+
+            h2{
+                font-family: 'CloverGrotesk-Bold';
+                font-size: clamp(2rem, 3vw, 3rem);
+                line-height: 1;
+            }
+
+            p{
+                font-size: clamp(1rem, 1.5vw, 1.8rem);
+            }
+        }
+    }
+
+    .risk{
+        min-height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 70px;
+        gap: 100px;
+
+        .symbol{
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &.show{
+                animation: fadeIn 1s ease-in-out;
+            }
+
+            h3{
+                font-size: clamp(8rem, 14vw, 15rem);
+                font-family: 'CloverGrotesk-Bold';
+                color: $purple;
+            }
+        }
+
+        .content{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            &.show{
+                animation: fadeIn 1s ease-in-out;
+            }
+
+            h2{
+                font-family: 'CloverGrotesk-Bold';
+                font-size: clamp(2rem, 3vw, 3rem);
+                line-height: 1;
+                color: $purple;
+            }
+
+            p{
+                font-size: clamp(1rem, 1.5vw, 1.8rem);
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px){
+        grid-template-rows: 1fr;
+
+        .accounts, .risk{
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+
+            .symbol{
+                width: 100%;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                h3{
+                    font-size: clamp(4rem, 7vw, 8rem);
+                }
+            }
+
+            .content{
+                width: 100%;
+                gap: 20px;
+            }
+        }
+    }
+}
